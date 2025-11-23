@@ -1,0 +1,204 @@
+/* basic style which applies to all devices by default, mobile-first approach */
+@media{
+.one{ 
+	color: slateblue;
+	text-align: center;
+	margin: auto;
+	padding-top: 2px;
+}
+h3{
+	margin-top: 10px;
+	text-align: center;
+}
+p{
+	margin-left: 10px
+}
+
+#h4OJ{
+	margin-left: 10px;
+}
+
+#placeholderImage{
+	float: right;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 50px;
+	margin-bottom: 15px;
+}
+
+.aboutBody {
+	background-color: powderblue;
+	color: darkgreen;
+}
+
+.paragraphOJ, .paragraphOJ1{
+	margin-right: 100px;
+}
+
+textarea{
+	background-color: white;
+	margin-right: 50px;
+	font-size: 10px;
+	width: 300px;
+	height: 200px;
+}
+
+.img-comp-container{
+	float: right;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 350px;
+	margin-bottom: 15px;
+}	
+
+.img-comp-img img-comp-overlay{
+	width: 300px;
+	height: 200px;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  /*color: blue;*/
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 15px;
+  text-decoration: none;
+  font-size: 36px;
+  /*color: #818181;*/
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  font-size: 36px;
+  margin-left: 100px;
+}
+}
+
+#main {
+  transition: margin-left .5s;
+}
+
+const myCarouselElement = document.querySelector('#myCarousel')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+  interval: 2000,
+  touch: false
+})
+
+* {box-sizing: border-box;}
+
+.carouselExample{
+	margin-top: 60px;
+}
+
+.img-comp-container {
+  position: relative;
+  height: 200px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.column {
+  float: left;
+  margin-left: 50px;
+  width: 20%;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 10px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: gray;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 95%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.findOutMore{
+	background-color: lightcyan;
+}
+
+.fOH{
+	margin-top: 50px;
+	text-align: center;
+}
