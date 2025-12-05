@@ -299,6 +299,7 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 		margin-right: 10px;
 	}
 	.externalLinks{
+		align-content: top;
 		font-size: 20px;
 		text-align: center;
 	}
@@ -343,15 +344,14 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 	width: 10%
 }
 
+iframe{
+	float: right;
+	margin-left: 20px;
+}
 /* end of OJ CSS*/
 
-#topImageJH{
-	height:20%;
-	width:100%;	
-}
-
-/* how to make a difference created by SH */
-.page-content-wrapper {
+/* how to make a difference page layout by SH*/
+.MainContent {
     margin-top: 100px;
     padding: 30px;
     max-width: 1200px;
@@ -359,20 +359,28 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
     margin-right: auto;
 }
 
-.page-content-wrapper h1 {
-    color: black;
+.MainContent h1 {
+    color: #006994;
     text-align: center;
     margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #00b4d8;
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.content-section {
+
+.action-section {
     display: flex;
     gap: 40px;
     margin-bottom: 50px;
     align-items: flex-start;
 }
 
-.text-content {
+.solutions{
     flex: 2;
     background: white;
     padding: 25px;
@@ -380,27 +388,27 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.text-content h2 {
+.solutions h2 {
     color: black;
     margin-bottom: 15px;
 }
 
-.text-content p {
+.solutions p {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
 }
 
-.image-content {
+.ImageContent {
     flex: 1;
     text-align: center;
 }
 
 .content-image {
     width: 100%;
-    height: 200px;
-    background-color: #e9ecef;
-    border: 2px dashed #ccc;
+    height: 500px;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -410,114 +418,19 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
     color: black;
     font-size: 14px;
 }
-
-/* Stack on mobile */
-@media (max-width: 768px) {
-    .content-section {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .page-content-wrapper {
-        margin-top: 80px;
-        padding: 15px;
-    }
-}
-/* how to make a difference page layout */
-.page-content-wrapper {
-    margin-top: 100px;
-    padding: 30px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.page-content-wrapper h1 {
-    color: black;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.content-section {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 50px;
-    align-items: flex-start;
-}
-
-.text-content {
-    flex: 2;
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.text-content h2 {
-    color: black;
-    margin-bottom: 15px;
-}
-
-.text-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-.image-content {
-    flex: 1;
-    text-align: center;
-}
-
-.content-image {
-    width: 100%;
-    height: 200px;
-    background-color: #e9ecef;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-}
-
-.image-content p {
-    margin-top: 10px;
-    font-style: italic;
-    color: black;
-    font-size: 14px;
-}
-h3{
-	margin-top: 60px;
-	text-align:left;
-	
-}
-
-
-/* Stack on mobile */
-@media (max-width: 768px) {
-    .content-section {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .page-content-wrapper {
-        margin-top: 80px;
-        padding: 15px;
-    }
-}
-
 /* Across the world page css created by SH  */
-
-body {
+.Main{
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
     padding-top: 80px;
+    background-color: #e6f7ff;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.main-heading {
+.mainheading {
     text-align: center;
     margin-bottom: 30px;
 }
@@ -528,127 +441,340 @@ body {
     margin-bottom: 10px;
 }
 
+/* HEADER IMAGE */
 .large-image-container {
     width: 100%;
-    height: 300px;
-    background-color: #e9ecef;
     margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    border: 2px dashed #ccc;
+}
+#large-imageSH{
+	width:100%;
+	height:500px;
 }
 
 .large-image-container img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
+
+/* SECTIONS */
 .section {
-    display: flex;
-    margin-bottom: 50px;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.section-left {
-    flex: 1;
-    background: white;
+    margin-bottom: 40px;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.section-right {
-    flex: 1;
-    text-align: center;
-}
-
 .section h2 {
-    color: #333;
+    color: #1a5f7a;
     margin-bottom: 20px;
-    font-size: 1.8rem;
+    border-bottom: 2px solid #6ab7c7;
+    padding-bottom: 10px;
 }
 
+/* PARAGRAPHS */
+.paragraph {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* PROBLEMS & SOLUTIONS LAYOUT */
+
+.section-left, .section-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.section-left {
+    width: 100%;
+    padding-right: 20px;
+}
+
+.section-right {
+    width: 35%;
+}
+
+.section-right img {
+    width: 250%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* BULLET LISTS */
 .bullet-list {
     list-style: none;
     padding-left: 0;
 }
 
 .bullet-list li {
-    margin-bottom: 15px;
-    padding-left: 20px;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
     position: relative;
 }
 
 .bullet-list li:before {
-    content: "•";
+    content: ".";
     position: absolute;
-    left: 0;
-    color: #333;
-    font-size: 1.5rem;
+    left: 15px;
+    color: #1a5f7a;
+    font-size: 1.2rem;
 }
 
-.paragraph 1 {
-    height: 20px;
-    background-color: #e9ecef;
-    margin-bottom: 10px;
-    border-radius: 4px;
+
+/* GALLERY */
+
+.galleryImages {
+    margin-top: 20px;
 }
 
-.section-right img {
-    width: 100%;
-    height: 200px;
-    background-color: #e9ecef;
-    border: 2px dashed #ccc;
+.galleryImages img {
+    width: 100%;  
+    height: 180px;
+    object-fit: cover;
     border-radius: 8px;
+    display: block;
+
 }
 
-#gallery-section {
-    flex-direction: column;
-}
-
-.gallery-images {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.gallery-images img {
-    flex: 1;
-    height: 200px;
-    background-color: #e9ecef;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-}
+/* FOOTER */
 
 .footer {
     margin-top: 50px;
-    padding: 20px 0;
-    border-top: 1px solid #dee2e6;
+    padding: 20px;
+    background: #1a5f7a;
+    color: white;
     text-align: center;
+    border-radius: 8px;
 }
 
 .footer-links a {
+    color: white;
     margin: 0 15px;
-    color: #6c757d;
     text-decoration: none;
 }
 
 .footer-links a:hover {
-    color: #333;
+    text-decoration: underline;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .section {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .gallery-images {
-        flex-direction: column;
-    }
-}
+
+
 /* end of how to make a difference page & around the world page */
+
+
+/*Start of Ireland & Quiz page*/
+/*centers text in heading section*/
+.headingsJH{
+	text-align:center;
+	margin-top:1%;
+}
+/*bring image below navbar*/
+.topImageJH{
+	margin-bottom:1%;
+	height:360px;
+	width:100%;
+	margin-top:0%;
+}
+
+.bodyJH{
+	 padding-top: 80px;
+	 background-color:#f3ebcd;
+	 font-family:Helvetica Neue, Arial;
+}
+/*CSS for flip card https://www.w3schools.com/howto/howto_css_flip_card.asp */
+/*Creates the animation behind the funfact flip card*/
+.funFactJH{
+	background-color:transparent;
+	perspective:1000px;
+	width:16rem;
+	height:11rem;
+	
+}
+.funFactInnerJH{
+	position: relative;
+	width:16rem;
+	height:11rem;
+	text-align:center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+	
+}
+/*sets it to flip when you hover over it*/
+.funFactJH:hover .funFactInnerJH{
+	transform:rotateY(180deg);
+}
+.funFactFrontJH,.funFactBackJH{
+	position: absolute;
+	width:16rem;
+	height:11rem;
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+}
+.funFactFrontJH{
+	background-color:#bbb;
+	color:black;
+}
+.funFactBackJH{
+	background-color:lightblue;
+	color:black;
+	transform:rotateY(180deg);
+	
+}
+.funFactImageJH{
+	height:11rem;
+	width:16rem;
+	margin:0px;
+}
+.introJH{
+	margin-bottom:2%;
+}
+/*End of flip card*/
+/*design of quiz*/
+.quizJH{
+	background-color:lightblue;
+	padding:2%;
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom:2%;
+	border: 3px solid black;
+	border-radius:10px;
+	
+}
+/*style of submit button on forms*/
+.quizSubmitJH{
+	text-align:center;
+	margin-top:2%;
+}
+/*to center my main heading on my page*/
+.h3JH{
+	margin-top:0%;
+	text-align:center;
+}
+
+/*sets the width and height arround the flip-cards*/
+.areaJH{
+	height:11rem;
+	width:16rem;
+	
+}
+
+/*style for the paragraphs that contain the information */
+.infoJH{
+	margin-bottom:10%;
+}
+/*sets the width and height arround the flip-cards on a smaller screen*/
+.sAreaJH{
+	height:11rem;
+	width:16rem;
+	margin-bottom:10%;
+	margin-left:6rem;
+}
+/*Underlines my subheadings making them easier to find for users*/
+.subHeadingsJH{
+	text-decoration:underline; /*W3Schools, text-decoration https://www.w3schools.com/cssref/pr_text_text-decoration.php*/
+	
+}
+/*styling for drop down questions on smaller quiz*/
+.formQJH{
+	width:90%;
+	text-align:center;
+	margin-left:5%;
+	margin-right:5%;
+}
+.error-messageJH{
+	color:red;
+}
+
+
+/*end of Ireland & Quiz page*/
+
+/*start of Food Industry and Get in Contact Pages */
+/*all end with AC, as to not accidentally overwrite others work*/
+
+.bgLightGreyTopAC /* this code has borders around the background to give a bit of a more pagnated feel */{
+	background-color: #ebebeb;
+	border-left: 2px solid #bdbdbd;
+	border-right: 2px solid #bdbdbd;
+	border-top: 2px solid #bdbdbd;
+	;
+}
+.bgLightGreyMiddleAC /* this is reepated three times, for the top div, middle div, and bottom div.*/{
+	background-color: #ebebeb;
+	border-left: 2px solid #bdbdbd;
+	border-right: 2px solid #bdbdbd;
+}
+.bgLightGreyBottomAC {
+	background-color: #ebebeb;
+	border-left: 2px solid #bdbdbd;
+	border-right: 2px solid #bdbdbd;
+	border-bottom: 2px solid #bdbdbd;	
+}
+
+.navUnhideAC /* as the heading sometimes hides itself, this is needed to make the heading show up */{
+	padding-top:60px;
+	text-align: center;
+}
+	
+.blueAC {
+	color: #609aeb;
+	text-shadow: 0px 0px 2px white;
+	text-align: center;
+}				
+
+.h5AC {
+	text-align: center;
+}
+
+.headingAC {
+	text-align: center;
+	padding-top: 45px;
+}
+
+.infoAC {
+	margin: 4px;
+	margin-top: 8px;
+}
+
+.floatRightAC /*for images, goes unused*/{
+	float: right;
+}
+
+.floatLeftAC /*for images, goes unused*/{
+	float: left;
+}
+
+.imageMarginAC {
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 5px;
+	margin-left: 24px;
+	width: 320px;
+	border-width: 3px;
+	
+}
+.imageMarginS{
+	margin-left: 33%;
+	margin-right: 33%;
+	width:34%;
+}
+.bpSpacesAC {
+	margin: 5px
+}
+			
+.textAC {
+	text-align: center;
+	
+}
+
+.bgWhiteAC {
+	background-color: white;
+}
