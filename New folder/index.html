@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            transition: background-color 0.5s; /* Smooth transition */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content/Box */
+		.modal-content {
+		  background-color: #fefefe;
+		  margin: 15% auto; /* 15% from the top and centered */
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 80%; /* Could be more or less, depending on screen size */
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: black;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+			}
+
+			/* Modal Content */
+			.modal-content {
+			  position: relative;
+			  background-color: #fefefe;
+			  margin: auto;
+			  padding: 0;
+			  border: 1px solid #888;
+			  width: 80%;
+			  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			  -webkit-animation-name: animatetop;
+			  -webkit-animation-duration: 0.4s;
+			  animation-name: animatetop;
+			  animation-duration: 0.4s
+			}
+
+			/* Add Animation */
+			@-webkit-keyframes animatetop {
+			  from {top:-300px; opacity:0} 
+			  to {top:0; opacity:1}
+			}
+
+			@keyframes animatetop {
+			  from {top:-300px; opacity:0}
+			  to {top:0; opacity:1}
+			}
+
+			/* The Close Button */
+			.close {
+			  color: white;
+			  float: right;
+			  font-size: 28px;
+			  font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+			  color: #000;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+
+			.modal-header {
+			  padding: 2px 16px;
+			  background-color: #5cb85c;
+			  color: white;
+			}
+
+			.modal-body {padding: 2px 16px;}
+
+			.modal-footer {
+			  padding: 2px 16px;
+			  background-color: #5cb85c;
+			  color: white;
+			}
+			.main {
+			  padding: 25px;
+			  background-color: white;
+			  color: black;
+			  font-size: 25px;
+			}
+
+			.dark-mode {
+			  background-color: black;
+			  color: white;
+			}
+		</style>
+	</head>
+	<body class="main">
+		<button onclick="myFunction()">Toggle dark mode</button>
+
+		<script>
+			function myFunction() {
+			   var element = document.body;
+			   element.classList.toggle("dark-mode");
+			}
+		</script>
+
+		<div class="colorChange">
+			<button onclick="changeBackgroundColor()">Change Background Color</button>
+
+			<script>
+				function changeBackgroundColor() {
+					// Generate a random color
+					const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+					// Change the body's background color
+					document.body.style.backgroundColor = randomColor;
+				}
+			</script>
+		</div>
+		<div class="reverse">
+			<button onclick="changeBackgroundColor2()">Back</button>
+			<script>
+				function changeBackgroundColor2() {
+					const randomColor2 = '#' + Math.floor(Math.random()*16777215).toString(16);
+					//return this.randomColor- randomColor2
+					// Change the body's background color
+					document.body.style.backgroundColor2 = randomColor - randomColor2;
+				}
+			</script>
+		</div>
+		<p id="text">Cycle my color.</p> 
+		<button id="cycle">Cycle color</button> 
+		<script> 
+			const colors = ['black','red','orange','green','blue','purple', 'white', 'pink', 'darkblue']; 
+			let i = 0; 
+			const el = document.getElementById('text'); 
+			 
+			document.getElementById('cycle').addEventListener('click', () => { 
+			  i = (i + 1) % colors.length; 
+			  el.style.color = colors[i]; 
+			}); 
+		</script> 
+		<br><br>
+		<label for="favcolor">Select your favorite color:</label>
+		<input type="color" id="favcolor" value="#ff0000" onclick="changeTextColor()">
+		<script>
+			function changeTextColor() {
+			const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+			document.body.style.backgroundColor = randomColor
+		</script>
+		<script>
+			var getContrast = function (hexcolor){
+
+			// If a leading # is provided, remove it
+			if (hexcolor.slice(0, 1) === '#') {
+				hexcolor = hexcolor.slice(1);
+			}
+			
+			// If a three-character hexcode, make six-character
+			if (hexcolor.length === 3) {
+				hexcolor = hexcolor.split('').map(function (hex) {
+					return hex + hex;
+				}).join('');
+			}
+
+			// Convert to RGB value
+			var r = parseInt(hexcolor.substr(0,2),16);
+			var g = parseInt(hexcolor.substr(2,2),16);
+			var b = parseInt(hexcolor.substr(4,2),16);
+
+			// Get YIQ ratio
+			var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+
+			// Check contrast
+			return (yiq >= 128) ? 'black' : 'white';
+
+			};
+		</script>
+		<!-- Trigger/Open The Modal -->
+		<button id="myBtn">Open Modal</button>
+		<!-- Modal content -->
+		<div class="modal-content">
+		  <div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Modal Header</h2>
+		  </div>
+		  <div class="modal-body">
+				<p>Some text in the Modal Body</p>
+				<p>Some other text...</p>
+		  </div>
+		  <div class="modal-footer">
+				<h3>Modal Footer</h3>
+		  </div>
+		</div>
+		<script>
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			btn.onclick = function() {
+			  modal.style.display = "block";
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+				modal.style.display = "none";
+			  }
+			}
+		</script>
+		<script>
+			// Required
+			@import "functions";
+			@import "variables";
+			@import "variables-dark";
+
+			// Add a custom color to $theme-colors
+			$custom-colors: (
+			  "custom-color": #712cf9
+			);
+			$theme-colors: map-merge($theme-colors, $custom-colors);
+
+			@import "maps";
+			@import "mixins";
+			@import "utilities";
+
+			// Add a custom color to new theme maps
+
+			// Light mode
+			$custom-colors-text: ("custom-color": #712cf9);
+			$custom-colors-bg-subtle: ("custom-color": #e1d2fe);
+			$custom-colors-border-subtle: ("custom-color": #bfa1fc);
+
+			$theme-colors-text: map-merge($theme-colors-text, $custom-colors-text);
+			$theme-colors-bg-subtle: map-merge($theme-colors-bg-subtle, $custom-colors-bg-subtle);
+			$theme-colors-border-subtle: map-merge($theme-colors-border-subtle, $custom-colors-border-subtle);
+
+			// Dark mode
+			$custom-colors-text-dark: ("custom-color": #e1d2f2);
+			$custom-colors-bg-subtle-dark: ("custom-color": #8951fa);
+			$custom-colors-border-subtle-dark: ("custom-color": #e1d2f2);
+
+			$theme-colors-text-dark: map-merge($theme-colors-text-dark, $custom-colors-text-dark);
+			$theme-colors-bg-subtle-dark: map-merge($theme-colors-bg-subtle-dark, $custom-colors-bg-subtle-dark);
+			$theme-colors-border-subtle-dark: map-merge($theme-colors-border-subtle-dark, $custom-colors-border-subtle-dark);
+
+			// Remainder of Bootstrap imports
+			@import "root";
+			@import "reboot";
+			// etc
+		</script>
+	</body>
+</html>
